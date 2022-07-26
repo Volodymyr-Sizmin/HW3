@@ -2,25 +2,29 @@
 class Colors
 {
 
-    private static function setRed($red)
+    private  function setRed($red)
     {
-        if ($red < 0 or $red > 255) {
+            if ($red < 0 or $red > 255)
+            {
             throw new Exception("Only numbers from 0 to 255");
-        }
+            }
+            $this->red = $red;
     }
 
-    private static function setGreen($green)
+    private  function setGreen($green)
     {
         if ($green < 0 or $green > 255) {
             throw new Exception("Only numbers from 0 to 255");
         }
+        $this->green = $green;
     }
 
-    private static function setBlue($blue)
+    private  function setBlue($blue)
     {
         if ($blue < 0 or $blue > 255) {
             throw new Exception("Only numbers from 0 to 255");
         }
+        $this->blue = $blue;
     }
 
     public function __construct(
@@ -28,11 +32,11 @@ class Colors
         private int $green,
         private int $blue)
     {
-        self::setRed($red);
+        $this->setRed($red);
 
-        self::setGreen($green);
+        $this->setGreen($green);
 
-        self::setBlue($blue);
+        $this->setBlue($blue);
 
     }
 
@@ -75,7 +79,6 @@ try {
     } catch (Exception $e) {
     echo $e->getmessage();
 }
-
 var_dump(Colors::equals($color1, $color2));
 echo "<br>";
 $color3 = Colors::random();
