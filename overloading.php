@@ -52,6 +52,7 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage() .  "<br>";
     echo "<hr>";
+    echo "<br>";
     $e->NewMessage(1);
 }
 
